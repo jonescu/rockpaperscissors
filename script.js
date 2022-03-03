@@ -8,9 +8,7 @@ function computerPlay(){
 function playRound(playerSelection, computerSelection) {
    playerSelection = prompt('Make a selection: Rock, Paper, or Scissors')
    computerSelection = computerPlay();
-    const firstChar = playerSelection[0].toUpperCase();
-    const player = playerSelection.slice(1).toLowerCase();
-    const final =  firstChar.concat(player)
+    const final = playerSelection[0].toUpperCase() + playerSelection.substring(1)
     console.log(final, computerSelection);
     if(final === computerSelection) {
         return "Tie, try again"

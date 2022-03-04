@@ -1,10 +1,15 @@
 //Randomly selects from an array of options
+
 function computerPlay(){
     const choices = ["Rock","Paper","Scissors"];
     return choices[Math.floor(Math.random()* 3)];
 }
 
 // Plays one round, playerSelection is case insensitive. Returns the winner or if the game ties.
+
+let computerWins = 0;
+let playerWins = 0;
+
 function playRound(playerSelection, computerSelection) {
    playerSelection = prompt('Make a selection: Rock, Paper, or Scissors')
    computerSelection = computerPlay();
@@ -13,21 +18,32 @@ function playRound(playerSelection, computerSelection) {
     if(final === computerSelection) {
         return "Tie, try again"
     } else if(final === "Rock" && computerSelection !== "Paper") {
-        return "Player wins"
+        playerWins++;
+        return `Player wins, player: ${playerWins} computer: ${computerWins}`
     } else if(final === "Paper" && computerSelection !== "Scissors"){
-        return "Player wins"
+        playerWins++;
+        return `Player wins, player: ${playerWins} computer: ${computerWins}`
     } else if(final === "Scissors" && computerSelection !== "Rock"){
-        return "Player wins"
+        playerWins++;
+        return `Player wins, player: ${playerWins} computer: ${computerWins}`
     } else {
-        return "Computer wins"
+        computerWins++;
+        return `Computer wins, player: ${playerWins} computer: ${computerWins}`
     }
   }
 
-//Play five rounds
+
+//Play best of five
+
   function game() {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i<5; i++) {
         console.log(playRound());
+        if(computerWins == 3) {
+            return "Computer won best of five"
+        } else if(playerWins == 3) {
+            return "Player won best of five"
+        }
      }
   }
   
-  game();
+  console.log(game());

@@ -7,6 +7,7 @@
 body {
     display: flex;
     flex-direction: column;
+    font-family: 'Poppins', sans-serif;
 }
 
 .container {
@@ -15,6 +16,11 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    flex-direction: column;
+}
+
+.buttons {
+    margin-bottom: 1rem;
 }
 
 button {
@@ -27,4 +33,17 @@ button {
 button:hover {
     cursor: pointer;
     transform: scale(0.98)
+}
+
+.resultsDiv {
+    color: #fff;
+    text-align: center;
+}
+
+.playerScore {
+    margin: 1rem 0;
+}
+
+.play-again {
+    visibility: hidden;
 }

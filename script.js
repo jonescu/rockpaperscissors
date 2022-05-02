@@ -10,11 +10,13 @@ function computerPlay(){
 let computerWins = 0;
 let playerWins = 0;
 
+const results = document.querySelector('.results')
+
 function playRound(playerSelection, computerSelection) {
-   playerSelection = prompt('Make a selection: Rock, Paper, or Scissors')
+    
    computerSelection = computerPlay();
     const final = playerSelection[0].toUpperCase() + playerSelection.substring(1)
-    console.log(final, computerSelection);
+    results.textContent = `${final}, ${computerSelection}`
     if(final === computerSelection) {
         return "Tie, try again"
     } else if(final === "Rock" && computerSelection !== "Paper") {
@@ -32,18 +34,14 @@ function playRound(playerSelection, computerSelection) {
     }
   }
 
+// Add event listener to buttons
+const container = document.querySelector('.container')
+container.addEventListener('click', function(e) {
+    const isButton = e.target.nodeName === 'BUTTON';
+    if (!isButton) {
+        return;
+      } else {
 
-//Play best of five
-
-  function game() {
-    for (let i = 0; i<5; i++) {
-        console.log(playRound());
-        if(computerWins == 3) {
-            return "Computer won best of five"
-        } else if(playerWins == 3) {
-            return "Player won best of five"
-        }
-     }
-  }
-  
-  console.log(game());
+    console.log(e.target.textContent)
+      }
+})

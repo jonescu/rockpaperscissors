@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    background-color: #888;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+button {
+    margin: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: scale(0.98)
+}
